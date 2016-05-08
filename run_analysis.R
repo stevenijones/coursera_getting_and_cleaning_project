@@ -58,5 +58,7 @@ tidydatamelted <- melt(tidydata, id = c("subject", "activity")) # melt this so w
 
 tidydatamean <- dcast(tidydatamelted, subject + activity ~ variable,mean) # recast to a wide table but with means
 
-write.csv(tidydatamean, "tidydatamean.csv")
+write.table(tidydatamelted, "tidydata.txt", row.name=FALSE)
+write.table(tidydatamean, "tidydatamean.txt", row.name=FALSE)
+
 
